@@ -1,0 +1,23 @@
+## Challenge: Say "Hello, World!" With Python
+## print("Hello, World!") 
+
+print("Hello, World!") 
+
+## Challenge: Arithmetic Operators
+## The provided code stub reads two integers from STDIN, a and b. 
+## Add code to print three lines where: 
+## 1. The first line contains the sum of the two numbers. 
+## 2. The second line contains the difference of the first two numbers (first minus second). 
+## 3. The third line contains the product of the two numbers.
+
+print(a + b)
+print(a - b)
+print(a * b)
+
+## Challenge: Python: Division
+## The provided code stub reads two integers, a and b, from STDIN. 
+## Add logic to print two lines. The first line should contain the result of integer division, a // b. 
+## The second line should contain the result of float division, a / b. 
+
+print(a // b)
+print(a / b)
