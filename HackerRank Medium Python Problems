@@ -1,0 +1,9 @@
+# Challenge: Triangle Quest
+# You are given a positive integer N. 
+# Print a numerical triangle height of N-1. 
+# Can you do it using only arithmetic operations, a single for loop, 
+# and print statement in only 2 lines of code?
+# Do not use anything related to strings.
+
+for i in range(1, int(input())): 
+    print((i) * (pow(10, i) - 1) // 9)
