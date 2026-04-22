@@ -33,25 +33,85 @@ if __name__ == '__main__':
 for i in range(n): 
     print(i * i)
 
-# Challenge: Write a function
-# Given a year, determine whether it is a leap year. 
-# If it is a leap year, return the Boolena True. 
-# Otherwise, return False. 
-
-def is_leap(year):
-    leap = ()
-    
-    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
-        leap = True
-    else: 
-        leap = False
-    return leap
-
-year = int(input())
-print(is_leap(year))
-
 # Challenge: Print Function
 # The included code stub will read an integer, n, from STDIN. 
 # Without using any string methods, try to print the following: 123...n
 # Example: if n is 5, output should be 12345.
 
+if __name__ == '__main__':
+    n = int(input())
+    
+for i in range(1, n + 1):
+    print(i, end = '')
+
+# Challenge: Python If-Else
+# Given an integer n, perform the following conditional actions: 
+# If n is odd, print Weird. 
+# If n is even and in the inclusive range of 2 to 5, print Not Weird. 
+# If n is even and in the inclusive range of 6 to 20, print Weird. 
+# If n is even and greater than 20, print Not Weird.
+
+import math
+import os
+import random
+import re
+import sys
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+if n % 2 != 0:
+    print('Weird')
+elif n > 20 and n % 2 == 0:
+    print('Not Weird')
+elif n % 2 == 1 and n >= 2 and n <= 5:
+    print('Not Weird') 
+else:
+    print('Weird') 
+
+# Challenge: Find the Runner-Up Score!
+# You are given n scores. Store them in a list and find the runner-up. 
+# The first line contains n. 
+# The second line contains an array of n integers separated by a space.
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+
+print(sorted(set(arr))[-2])
+
+# Challenge: What's Your Name? 
+# You are given the firstname and lastname of a person on two different lines. 
+# Read them and print the following: 
+# "Hello firstname lastname! You just delved into python."
+
+def print_full_name(first, last):
+    # Write your code here
+
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+
+# Challenge: Power - Mod Power
+# You are given three integers: a, b, and m. Print two lines. 
+# On the first line, print the result of pow(a, b). 
+# On the second line, print the result of pow(a, b, m).
+
+a = int(input())
+b = int(input())
+m = int(input())
+
+print(pow(a, b))
+print(pow(a, b, m))
+
+# Challenge: Integers Come In All Sizes
+# Read four numbers: a, b, c, and d. 
+# Print the result of a^b + c^d. 
+
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+print(pow(a, b) + pow(c, d))
