@@ -115,3 +115,32 @@ c = int(input())
 d = int(input())
 
 print(pow(a, b) + pow(c, d))
+
+# Challenge: Finding the percentage
+# The first line contains the integer n, the number of students' records. 
+# The next n lines contain the names and marks obtained by a student. 
+# The final line contains query_name, the name of a student to query. 
+# Print one line: the average of the marks obtained by the particular student.
+
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    
+for student_name, student_scores in student_marks.items():
+    if student_name == query_name:
+        print(f"{sum(student_scores) / len(student_scores):.2f}")
+
+# Challenge: Tuples
+# Given an integer, n and n-space separated integers,
+# create a tuple t of those n integers. 
+# Print the result of hash(t). 
+
+if __name__ == '__main__':
+    n = int(raw_input())
+    t = tuple(map(int, raw_input().split()))
+    print(hash(t))
