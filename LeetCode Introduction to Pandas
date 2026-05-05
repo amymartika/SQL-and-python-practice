@@ -36,8 +36,8 @@ def selectData(students: pd.DataFrame) -> pd.DataFrame:
     return(students.loc[students['student_id'] == 101, ['name', 'age']])
 
 # Create a New Column
-# Write a solution to create a new column bonus that contains
-# the doubled values of the salary column. 
+# Write a solution to create a new column, bonus,
+# that contains the doubled values of the salary column. 
 
 import pandas as pd
 
@@ -55,7 +55,7 @@ def dropDuplicateEmails(customers: pd.DataFrame) -> pd.DataFrame:
     return(customers.drop_duplicates(subset = ['email']))
 
 # Drop Missing Data
-# Write a solution to reomve the rows with missing values. 
+# Write a solution to remove the rows with missing values. 
 
 import pandas as pd
 
@@ -72,3 +72,89 @@ import pandas as pd
 def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
     employees['salary'] = employees['salary'] * 2
     return employees
+
+# Rename Columns
+# Write a solution to rename the columns as follows: 
+# id to student_id
+# first to first_name
+# last to last_name
+# age to age_in_years
+
+import pandas as pd
+
+def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
+    students = students.rename(
+        columns = {
+            'id': 'student_id', 
+            'first': 'first_name', 
+            'last': 'last_name', 
+            'age': 'age_in_years'
+        }
+    )
+    return students
+
+# Change Data Type
+# Write a solution to correct the errors: 
+# The grade column is stored as floats. Convert it to integers. 
+
+import pandas as pd
+
+def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+    students['grade'] = students['grade'].astype('int')
+    return students
+
+# Fill Missing Data
+# Write a solution to fill in the missing value as 0 in the quantity column. 
+
+import pandas as pd
+
+def fillMissingValues(products: pd.DataFrame) -> pd.DataFrame:
+    products['quantity'] = products['quantity'].fillna(0)
+    return products
+
+# Reshape Data: Concatenate
+# Write a solution to concatenate these two DataFrames
+# vertically into one DataFrame. 
+
+import pandas as pd
+
+def concatenateTables(df1: pd.DataFrame, df2: pd.DataFrame) -> pd.DataFrame:
+    return pd.concat([df1, df2])
+
+# Reshape Data: Pivot
+# Write a solution to pivot the data so that each row represents
+# temperatures for a specific month and each city is a separate column. 
+
+import pandas as pd
+
+def pivotTable(weather: pd.DataFrame) -> pd.DataFrame:
+    return weather.pivot(
+        index = 'month',
+        columns = 'city',
+        values = 'temperature'
+    )
+
+# Reshape Data: Melt
+# Write a solution to reshape the data so that each row represents
+# sales data for a product in a specific quarter. 
+
+import pandas as pd
+
+def meltTable(report: pd.DataFrame) -> pd.DataFrame:
+    return report.melt(
+        id_vars = ['product'], 
+        value_vars = ['quarter_1', 'quarter_2', 'quarter_3', 'quarter_4'], 
+        var_name = 'quarter', 
+        value_name = 'sales'
+    )
+
+# Method Chaining
+# Write a solution to list the names of animals that weigh
+# strictly more than 100 kilograms. 
+# Return the animals sorted by weight in descending order. 
+
+import pandas as pd
+
+def findHeavyAnimals(animals: pd.DataFrame) -> pd.DataFrame:
+    results = animals[animals['weight'] > 100].sort_values(by = 'weight', ascending = False)
+    return results[['name']]
